@@ -1,86 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kehila – Connect With Your Community</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kehila — Connect with your community</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-inner">
-      <img src="assets/logo.png" alt="Kehila logo" class="logo" />
-      <span class="brand">Kehila</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <img src="assets/logo.png" alt="Kehila logo" class="logo" />
+        <span class="brand-name">Kehila</span>
+      </div>
+      <nav class="nav">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#orgs" class="nav-link">Organizations</a>
+        <a href="#contact" class="nav-cta">Email us</a>
+      </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Connect with your community. Find Kehila.</h1>
-      <p>Discover meaningful volunteering opportunities — from beach cleanups to food banks to elderly care — all in one place.</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner container">
+        <div class="hero-text">
+          <h1>Connect with your community. Find Kehila.</h1>
+          <p class="lead">Discover meaningful volunteering opportunities — beach cleanups, food banks, elderly care and more. Sign up, show up, make an impact.</p>
+          <div class="hero-ctas">
+            <a class="btn primary disabled">App Store (coming soon)</a>
+            <a class="btn primary disabled">Google Play (coming soon)</a>
+            <a class="btn outline" href="mailto:findkehila@gmail.com">Email us</a>
+          </div>
+        </div>
 
-      <div class="cta-buttons">
-        <a class="btn disabled">App Store (coming soon)</a>
-        <a class="btn disabled">Google Play (coming soon)</a>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <img src="assets/beach.jpg" alt="Beach cleanup volunteers" />
+            <div class="card-caption">Beach cleanup — join local groups</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="how container">
+      <h2>How Kehila works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Discover</h3>
+          <p>Search nearby events and causes that match your interests and schedule.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Join</h3>
+          <p>Sign up in seconds and get everything you need to show up prepared.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Impact</h3>
+          <p>Track your hours, meet neighbors, and help build a stronger community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS / GALLERY -->
+    <section id="events" class="events">
+      <div class="container">
+        <h2>Featured opportunities</h2>
+        <p class="sub">Real events, real people — find something that fits your time and passion.</p>
+
+        <div class="grid">
+          <article class="card">
+            <img src="assets/beach.jpg" alt="Beach cleanup" />
+            <div class="card-body">
+              <h3>Beach Cleanup</h3>
+              <p>Help keep our coastline clean. Tools provided, all ages welcome.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/foodbank.jpg" alt="Community food bank" />
+            <div class="card-body">
+              <h3>Community Food Bank</h3>
+              <p>Sort and pack food for families in need. Flexible shifts available.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="assets/elderly.jpg" alt="Helping the elderly" />
+            <div class="card-body">
+              <h3>Elderly Care Visits</h3>
+              <p>Spend time with seniors — conversation, errands, and companionship.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORGANIZATIONS -->
+    <section id="orgs" class="container orgs">
+      <div class="orgs-inner">
+        <div class="orgs-text">
+          <h2>Organizations — list your opportunities</h2>
+          <p>Nonprofits and community groups can post events, manage volunteers, and reach local supporters.</p>
+          <a class="btn outline" href="mailto:findkehila@gmail.com">Email us to get started</a>
+        </div>
+        <div class="orgs-visual">
+          <img src="assets/foodbank.jpg" alt="Volunteers at a food bank" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER CONTACT -->
+    <section id="contact" class="contact container">
+      <h2>Get in touch</h2>
+      <p>Questions, partnerships, or to list an event — email us and we’ll reply within 48 hours.</p>
+      <a class="btn primary" href="mailto:findkehila@gmail.com">Email findkehila@gmail.com</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2026 Kehila</div>
+      <div class="footer-links">
+        <a href="#how">How it works</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-  </section>
-
-  <!-- FEATURE STRIP -->
-  <section class="feature-strip">
-    <h2>Volunteering made simple</h2>
-    <p>Kehila helps you give back in ways that matter — to you and to your community.</p>
-  </section>
-
-  <!-- FEATURE GRID -->
-  <section class="features">
-    <div class="feature">
-      <img src="https://images.unsplash.com/photo-1508182311256-e3f7d57a5f4c?w=900" class="feature-img" />
-      <h3>Beach Cleanups</h3>
-      <p>Join local groups keeping our coastlines clean and beautiful.</p>
-    </div>
-
-    <div class="feature">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=900" class="feature-img" />
-      <h3>Food Banks</h3>
-      <p>Help pack, sort, and distribute food to families in need.</p>
-    </div>
-
-    <div class="feature">
-      <img src="https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?w=900" class="feature-img" />
-      <h3>Elderly Care</h3>
-      <p>Spend meaningful time with seniors who appreciate companionship.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>Built for people who want to help</h2>
-    <p>
-      Kehila brings together volunteers, nonprofits, and local communities.  
-      Whether you have an hour or a whole day, we help you find opportunities that fit your life.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact">
-    <h2>For Organizations</h2>
-    <p>Want to list your volunteering opportunities on Kehila?</p>
-    <p>
-      Contact us at
-      <a href="mailto:hello@findkehila.com">hello@findkehila.com</a>
-    </p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Kehila</p>
   </footer>
 
+  <!-- Floating app buttons -->
+  <div class="floating-apps" aria-hidden="true">
+    <a class="floating-btn" title="App Store (coming soon)"></a>
+    <a class="floating-btn" title="Google Play (coming soon)">▣</a>
+  </div>
 </body>
 </html>
