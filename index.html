@@ -3,94 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kehila | Community Connection</title>
+    <title>Kehila Beta | The Operating System for Local Impact</title>
     <style>
-        /* CSS IS NOW BUILT-IN SO IT CANNOT BREAK */
+        /* Modern Startup Styling */
         :root {
             --primary: #2d5a27;
             --accent: #e67e22;
-            --bg: #fef9f3;
+            --bg: #fdfaf5;
             --white: #ffffff;
-            --text: #333333;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-main);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
 
+        /* Navbar */
         .navbar {
-            background: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .navbar .container { display: flex; justify-content: space-between; align-items: center; }
 
-        .logo { height: 50px; width: auto; }
+        .logo { height: 45px; width: auto; }
 
         .nav-links { list-style: none; display: flex; align-items: center; }
         .nav-links li { margin-left: 25px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; }
 
-        .btn-cta { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 5px; }
+        .btn-beta { 
+            background: var(--primary); 
+            color: white !important; 
+            padding: 10px 20px; 
+            border-radius: 6px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
 
+        /* Hero Section */
         .hero {
-            padding: 100px 0;
+            padding: 120px 0 100px;
             text-align: center;
-            background: linear-gradient(rgba(254, 249, 243, 0.85), rgba(254, 249, 243, 0.85)), 
+            background: linear-gradient(rgba(253, 250, 245, 0.9), rgba(253, 250, 245, 0.9)), 
                         url('orchard-harvest.png') no-repeat center center/cover;
         }
 
-        .hero h1 { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; }
-        .highlight { color: var(--accent); }
-        .hero p { font-size: 1.3rem; max-width: 750px; margin: 0 auto 30px; }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
+        .beta-badge {
+            background: #eeece8;
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             display: inline-block;
+            margin-bottom: 20px;
         }
 
-        .content-section { padding: 80px 20px; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; color: var(--primary); }
+        .hero h1 { 
+            font-size: 3.8rem; 
+            color: var(--primary); 
+            margin-bottom: 24px; 
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .highlight { color: var(--accent); }
+        .hero p { 
+            font-size: 1.4rem; 
+            max-width: 800px; 
+            margin: 0 auto 40px; 
+            color: var(--text-muted);
+        }
+
+        .btn-hero {
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
+        }
+
+        /* Value Proposition */
+        .features { padding: 100px 0; background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .project-card {
-            background: var(--white);
-            border-radius: 10px;
+            background: var(--bg);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
+        .project-card:hover { transform: translateY(-5px); }
 
-        .project-card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 25px; }
-        .card-body h3 { color: var(--primary); margin-bottom: 10px; }
+        .project-card img { width: 100%; height: 240px; object-fit: cover; }
+        .card-body { padding: 30px; }
+        .card-body h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.4rem; }
+        .card-body p { color: var(--text-muted); font-size: 1rem; }
 
-        .footer { text-align: center; padding: 50px; background: var(--white); border-top: 1px solid #eee; }
+        /* Footer */
+        .footer { 
+            text-align: center; 
+            padding: 80px 20px; 
+            background: var(--bg); 
+            border-top: 1px solid rgba(0,0,0,0.05); 
+        }
+        .footer p { color: #999; font-size: 0.9rem; }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links li:not(:last-child) { display: none; }
         }
     </style>
 </head>
@@ -98,11 +148,12 @@
 
     <header class="navbar">
         <div class="container">
-            <img src="logo.png" alt="Kehila Logo" class="logo">
+            <img src="logo.png" alt="Kehila" class="logo">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#impact">Our Impact</a></li>
-                    <li><a href="#" class="btn-cta">Join Us</a></li>
+                    <li><a href="#vision">The Vision</a></li>
+                    <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#" class="btn-beta">Request Access</a></li>
                 </ul>
             </nav>
         </div>
@@ -110,48 +161,56 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Building Community,<br><span class="highlight">Hand in Hand.</span></h1>
-            <p>From cleaning our shores to harvesting local orchards, Kehila brings people together to make a real difference.</p>
+            <span class="beta-badge">Private Beta Now Live</span>
+            <h1>The Operating System for <br><span class="highlight">Local Impact.</span></h1>
+            <p>Kehila bridges the gap between community needs and collective action. Join our early adopters to start mobilizing your neighborhood with precision.</p>
             <div class="hero-btns">
-                <a href="#impact" class="btn-primary">View Projects</a>
+                <a href="#" class="btn-hero">Join the Waitlist</a>
             </div>
         </div>
     </section>
 
-    <section id="impact" class="container content-section">
-        <div class="section-header">
-            <h2>Our Recent Work</h2>
-        </div>
-        
-        <div class="card-grid">
-            <div class="project-card">
-                <img src="beach-cleanup.png" alt="Beach Cleanup">
-                <div class="card-body">
-                    <h3>Beach Restoration</h3>
-                    <p>Protecting marine life and keeping our coastlines pristine.</p>
-                </div>
+    <section id="vision" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Mobilization</h2>
+                <p>Turning "someone should do something" into "this is happening on Saturday."</p>
             </div>
-
-            <div class="project-card">
-                <img src="food-bank.png" alt="Food Bank">
-                <div class="card-body">
-                    <h3>Food Security</h3>
-                    <p>Providing fresh meals to families in our local area.</p>
+            
+            <div class="card-grid">
+                <div class="project-card">
+                    <img src="beach-cleanup.png" alt="Beach Cleanup">
+                    <div class="card-body">
+                        <h3>Dynamic Coordination</h3>
+                        <p>Organize high-impact events in under 48 hours using Kehila’s rapid-response communication tools.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <img src="orchard-harvest.png" alt="Orchard Harvest">
-                <div class="card-body">
-                    <h3>Community Harvest</h3>
-                    <p>Gathering fresh produce for neighbors in need.</p>
+                <div class="project-card">
+                    <img src="food-bank.png" alt="Food Distribution">
+                    <div class="card-body">
+                        <h3>Resource Mapping</h3>
+                        <p>Track neighborhood needs and food surplus in real-time to ensure zero waste and maximum reach.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="orchard-harvest.png" alt="Orchard Harvest">
+                    <div class="card-body">
+                        <h3>Micro-Logistics</h3>
+                        <p>Manage the transport of hyper-local produce from orchard to table with community-driven logistics.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 Kehila. All rights reserved.</p>
+        <div class="container">
+            <p>We're building in public. Kehila is currently onboarding a limited number of "Founding Communities."</p>
+            <br>
+            <p>&copy; 2026 Kehila. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
