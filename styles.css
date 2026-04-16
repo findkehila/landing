@@ -1,19 +1,24 @@
-/* Global */
+/* GLOBAL */
 body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
   color: #1f1f1f;
-  background: #fafafa;
+  background: #f7f7f7 url("https://www.transparenttextures.com/patterns/cubes.png");
   line-height: 1.6;
 }
 
-/* Header */
+/* HEADER */
 .header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
   background: white;
   border-bottom: 1px solid #e5e5e5;
+  padding: 12px 20px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .logo {
@@ -22,37 +27,36 @@ body {
 }
 
 .brand {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: #2a4d8f;
 }
 
-/* Hero */
+/* HERO */
 .hero {
+  padding: 100px 20px;
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #e8f5f1, #fdfdfd);
+  background: linear-gradient(135deg, #e8f5f1, #ffffff);
 }
 
-.hero h2 {
-  font-size: 32px;
-  max-width: 700px;
-  margin: 0 auto 20px;
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
   color: #0b7a5f;
 }
 
 .hero p {
-  font-size: 18px;
-  max-width: 600px;
-  margin: 0 auto 30px;
+  font-size: 20px;
   color: #444;
+  margin-bottom: 30px;
 }
 
-/* Buttons */
-.cta-buttons {
-  margin-top: 20px;
-}
-
+/* BUTTONS */
 .btn {
   display: inline-block;
   padding: 14px 24px;
@@ -70,33 +74,58 @@ body {
   cursor: not-allowed;
 }
 
-/* Features */
+/* FEATURES */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  padding: 50px 20px;
-  max-width: 1000px;
+  padding: 60px 20px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .feature {
   background: white;
-  padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   text-align: center;
+}
+
+.feature-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .feature h3 {
-  margin-top: 0;
+  margin-top: 16px;
   color: #2a4d8f;
 }
 
-/* Contact */
+.feature p {
+  padding: 0 20px 20px;
+  color: #555;
+}
+
+/* ABOUT */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 32px;
+  color: #2a4d8f;
+}
+
+/* CONTACT */
 .contact {
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
+  background: #ffffff;
 }
 
 .contact a {
@@ -104,7 +133,7 @@ body {
   font-weight: bold;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
